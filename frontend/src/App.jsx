@@ -15,6 +15,9 @@ import {
 } from "recharts";
 import "./App.css";
 
+
+const API_BASE_URL = "https://wind-analytics-7k2m.onrender.com";
+
 function App() {
   const [metrics, setMetrics] = useState(null);
   const [comparison, setComparison] = useState([]);
@@ -29,8 +32,8 @@ function App() {
         setError("");
 
         const [metricsResponse, comparisonResponse] = await Promise.all([
-          fetch("/api/metrics"),
-fetch("/api/comparison"),
+          fetch(`${API_BASE_URL}/api/metrics`),
+          fetch(`${API_BASE_URL}/api/comparison`)
         ]);
 
         if (!metricsResponse.ok || !comparisonResponse.ok) {
