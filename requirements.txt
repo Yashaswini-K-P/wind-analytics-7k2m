@@ -1,0 +1,6 @@
+
+fastapi
+uvicorn
+requests
+pandas==2.2.3
+numpy
